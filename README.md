@@ -73,3 +73,51 @@ const user = { id: 1, name: "Aminul", email: "aminul@example.com" };
 const email = getValue(user, "email"); // Type: string
 ```
 
+
+# Difference Between `any`, `unknown`, and `never` Types in TypeScript
+
+## 🧠 Question:
+Explain the difference between `any`, `unknown`, and `never` types in TypeScript.
+
+---
+
+## 💡 Answer:
+
+TypeScript provides three special types — **`any`**, **`unknown`**, and **`never`** — to handle different situations where type safety and intent matter.  
+Let’s understand how each one behaves and when to use them.
+
+---
+
+### 🔹 `any` Type
+
+The `any` type disables TypeScript’s type checking for that variable.  
+Once a variable is typed as `any`, you can assign it any value and perform any operation on it — **no compile-time errors**.
+
+```ts
+let value: any = "Hello";
+value = 123;
+value = true;
+
+value.toUpperCase(); // ✅ No error, but risky
+```
+
+# TypeScript Core Concepts Explained
+
+## 🧠 Question 1:
+What is **type inference** in TypeScript? Why is it helpful?
+
+---
+
+## 💡 Answer:
+
+**Type inference** is TypeScript’s ability to **automatically detect the type** of a variable or expression without you explicitly declaring it.
+
+In other words, when you assign a value, TypeScript analyzes that value and infers its type for future use.
+
+```ts
+let message = "Hello TypeScript";
+// Inferred type: string
+
+message = "Hi again"; // ✅ Allowed
+// message = 123; // ❌ Error: Type 'number' is not assignable to type 'string'
+```
